@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adam Kanaan | AI Creative Director</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700;900&family=Noto+Sans+Arabic:wght@400;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --accent: #00f2ff;
+            --bg: #050505;
+        }
+        body {
+            background-color: var(--bg);
+            color: white;
+            font-family: 'Inter', 'Noto Sans Arabic', sans-serif;
+            margin: 0;
+            overflow-x: hidden;
+            line-height: 1.5;
+        }
+        .bg-glow {
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: radial-gradient(circle at 50% 50%, #1a1a1a 0%, #050505 100%);
+            z-index: -1;
+        }
+        .container { 
+            max-width: 1000px; 
+            margin: 0 auto; 
+            padding: 60px 20px; 
+        }
+
+        .lang-switch {
+            position: fixed;
+            top: 25px;
+            right: 25px;
+            background: rgba(255,255,255,0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid var(--accent);
+            color: var(--accent);
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 50px;
+            font-weight: bold;
+            z-index: 100;
+            font-size: 0.8rem;
+        }
+
+        header { margin-bottom: 60px; max-width: 750px; }
+        h1 { font-size: clamp(3.5rem, 10vw, 5.5rem); margin: 0; text-transform: uppercase; line-height: 0.85; letter-spacing: -3px; font-weight: 900; }
+        .gradient-text {
+            background: linear-gradient(to right, #fff, var(--accent));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 40px; }
+        .section-title { color: var(--accent); text-transform: uppercase; letter-spacing: 3px; font-size: 0.9rem; margin-bottom: 20px; display: block; font-weight: 800; }
+        
+        .card {
+            background: rgba(255,255,255,0.03);
+            border: 1px solid rgba(255,255,255,0.1);
+            padding: 30px;
+            border-radius: 20px;
+            transition: 0.4s;
+            margin-bottom: 20px;
+        }
+        .card:hover { border-color: var(--accent); transform: translateY(-5px); background: rgba(0, 242, 255, 0.05); }
+        .card strong { font-size: 1.2rem; margin-bottom: 12px; display: block; }
+        .card p { font-size: 1rem; color: #ccc; margin: 0; font-weight: 300; }
+
+        .btn {
+            display: inline-block;
+            padding: 15px 40px;
+            background: var(--accent);
+            color: black;
+            text-decoration: none;
+            font-weight: 800;
+            border-radius: 5px;
+            margin-top: 30px;
+            cursor: pointer;
+            border: none;
+            text-transform: uppercase;
+            font-size: 1rem;
+        }
+        .btn:hover { box-shadow: 0 0 20px var(--accent); }
+
+        .social-links { margin-top: 15px; display: flex; gap: 20px; }
+        .social-links a { color: var(--accent); text-decoration: none; font-weight: bold; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px; }
+
+        /* CONTACT PAGE VIEW */
+        #contact-page {
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: var(--bg);
+            display: none;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            z-index: 200;
+            text-align: center;
+        }
+        .email-box {
+            background: rgba(255,255,255,0.03);
+            padding: 40px;
+            border-radius: 20px;
+            border: 1px solid var(--accent);
+        }
+        .email-text { font-size: clamp(1.2rem, 5vw, 2.5rem); font-weight: 900; color: var(--accent); margin-bottom: 20px; }
+
+        .rtl { direction: rtl; text-align: right; }
+        .hidden { display: none; }
+    </style>
+</head>
+<body>
+    <div class="bg-glow"></div>
+    <button class="lang-switch" onclick="toggleLang()">ARABIC / عربي</button>
+
+    <div id="contact-page">
+        <div class="email-box">
+            <span class="section-title">Get In Touch</span>
+            <div class="email-text">aaikuw8@gmail.com</div>
+            <div class="social-links" style="justify-content: center; margin-bottom: 20px;">
+                <a href="https://www.instagram.com/ai.kuw8/" target="_blank">Instagram</a>
+                <a href="https://www.tiktok.com/@ai.kuw8" target="_blank">TikTok</a>
+            </div>
+            <button onclick="closeContact()" style="background:none; border:none; color:white; cursor:pointer; text-decoration:underline;">Back to Portfolio</button>
+        </div>
+    </div>
+
+    <div id="main-ui">
+        <div id="en-content" class="container">
+            <header>
+                <span class="section-title">Independent Freelance Agent | AI Creative Director & Producer</span>
+                <h1 class="gradient-text">ADAM<br>KANAAN</h1>
+                <p style="color: #888; margin-bottom: 5px;">Kuwait | aaikuw8@gmail.com</p>
+                <div class="social-links">
+                    <a href="https://www.instagram.com/ai.kuw8/" target="_blank">Instagram</a>
+                    <a href="https://www.tiktok.com/@ai.kuw8" target="_blank">TikTok</a>
+                </div>
+                <button onclick="openContact()" class="btn">CONTACT ME</button>
+            </header>
+
+            <div class="grid">
+                <div>
+                    <span class="section-title">The Methodology</span>
+                    <p style="font-weight: 400; color: #eee; margin-bottom: 25px; font-size: 1.1rem;">
+                        I don't just generate images; I engineer <strong>Marketing ROI</strong>. By blending high-end cinematography with bleeding-edge AI, I create visuals that command attention and convert.
+                    </p>
+                    <div class="card">
+                        <strong>Cinematic Directorship</strong>
+                        <p>Precise command over virtual lensing, volumetric lighting, and physical consistency. I bridge the gap between generative tools and $100k commercial aesthetics, advancing the technical standards for the future of advertisement by ensuring every frame meets the demands of modern, high-stakes media.</p>
+                    </div>
+                </div>
+                <div>
+                    <span class="section-title">Projects</span>
+                    <div class="card">
+                        <strong>ASM Soccer Advertisement</strong>
+                        <p>High-octane athletic synthesis. I engineered photorealistic player motion and cinematic crowd dynamics, proving that AI can handle high-speed sports action with zero frame-dropping or quality loss.</p>
+                    </div>
+                    <div class="card">
+                        <strong>Product Commercials</strong>
+                        <p>Redefining luxury storytelling. These productions feature hyper-realistic human models and complex product interactions, delivering an emotional connection that standard CGI simply cannot touch.</p>
+                    </div>
+                    <div class="card">
+                        <strong>Future-Proof Media</strong>
+                        <p>Deep-dive research into generative physics and temporal stability. My videos are optimized for the next generation of social marketing and digital-first branding.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="ar-content" class="container rtl hidden">
+            <header>
+                <span class="section-title">وكيل فريلانسر مستقل | مخرج إبداعي ومنتج ذكاء اصطناعي</span>
+                <h1 class="gradient-text">آدم<br>كنعان</h1>
+                <p style="color: #888; margin-bottom: 5px;">الكويت | aaikuw8@gmail.com</p>
+                <div class="social-links">
+                    <a href="https://www.instagram.com/ai.kuw8/" target="_blank">إنستغرام</a>
+                    <a href="https://www.tiktok.com/@ai.kuw8" target="_blank">تيك توك</a>
+                </div>
+                <button onclick="openContact()" class="btn">تواصل معي</button>
+            </header>
+
+            <div class="grid">
+                <div>
+                    <span class="section-title">منهجية العمل</span>
+                    <p style="font-weight: 400; color: #eee; margin-bottom: 25px; font-size: 1.1rem;">
+                        أنا لا أصنع مجرد صور؛ أنا أقوم بهندسة <strong>العائد على الاستثمار</strong>. من خلال دمج الإخراج السينمائي الراقي مع أحدث تقنيات الذكاء الاصطناعي، أصنع محتوى يفرض نفسه ويحقق النتائج.
+                    </p>
+                    <div class="card">
+                        <strong>الإخراج السينمائي الرقمي</strong>
+                        <p>إتقان تام للعدسات الافتراضية، الإضاءة الحجمية، والفيزياء المتناسقة. أعمل على سد الفجوة بين أدوات الذكاء الاصطناعي ومعايير الإعلانات التجارية الكبرى، مع تطوير الرؤية الفنية لمستقبل صناعة الإعلانات لضمان جودة بصرية تليق بالجيل القادم من المحتوى الإعلامي.</p>
+                    </div>
+                </div>
+                <div>
+                    <span class="section-title">المشاريع المختارة</span>
+                    <div class="card">
+                        <strong>حملة ASM الرياضية</strong>
+                        <p>توليد حركي عالي الأداء. قمت بهندسة حركة رياضية واقعية وبيئات سينمائية صاخبة، مما يثبت أن الذكاء الاصطناعي قادر على محاكاة الأكشن الرياضي بدقة متناهية.</p>
+                    </div>
+                    <div class="card">
+                        <strong>إعلانات المنتجات</strong>
+                        <p>إعادة تعريف سرد القصص الفاخرة. تتميز هذه الإنتاجات بظهور <strong>أشخاص واقعيين تماماً</strong> وتفاعلات معقدة مع المنتجات، لتقديم ارتباط عاطفي لا يمكن للجرافيك التقليدي الوصول إليه.</p>
+                    </div>
+                    <div class="card">
+                        <strong>إعلام المستقبل</strong>
+                        <p>أبحاث عميقة في فيزياء التوليد والاستقرار الزمني. فيديوهاتي مصممة لتناسب الجيل القادم من التسويق الرقمي والعلامات التجارية العصرية.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function toggleLang() {
+            const en = document.getElementById('en-content');
+            const ar = document.getElementById('ar-content');
+            const btn = document.querySelector('.lang-switch');
+            if (en.classList.contains('hidden')) {
+                en.classList.remove('hidden');
+                ar.classList.add('hidden');
+                btn.innerText = "ARABIC / عربي";
+            } else {
+                en.classList.add('hidden');
+                ar.classList.remove('hidden');
+                btn.innerText = "ENGLISH / إنجليزي";
+            }
+        }
+
+        function openContact() {
+            document.getElementById('contact-page').style.display = 'flex';
+            document.getElementById('main-ui').style.display = 'none';
+        }
+
+        function closeContact() {
+            document.getElementById('contact-page').style.display = 'none';
+            document.getElementById('main-ui').style.display = 'block';
+        }
+    </script>
+</body>
+</html>
