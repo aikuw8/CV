@@ -1,52 +1,52 @@
-<!DOCTYPE html> 
-<html lang="en"> 
-<head> 
+<!DOCTYPE html>
+<html lang="en">
+<head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
-    <title>Adam Kanaan | AI Creative Director</title> 
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700;900&family=Noto+Sans+Arabic:wght@400;800&display=swap" rel="stylesheet"> 
-    <style> 
-        :root { 
-            --accent: #00f2ff; 
-            --bg: #050505; 
-        } 
-        body { 
-            background-color: var(--bg); 
-            color: white; 
-            font-family: 'Inter', 'Noto Sans Arabic', sans-serif; 
-            margin: 0; 
-            overflow-x: hidden; 
-            line-height: 1.5; 
-        } 
-        .bg-glow { 
-            position: fixed; 
-            top: 0; left: 0; width: 100%; height: 100%; 
-            background: radial-gradient(circle at 50% 50%, #1a1a1a 0%, #050505 100%); 
-            z-index: -1; 
-        } 
-        .container {  
-            max-width: 1000px;  
-            margin: 0 auto;  
-            padding: 60px 20px;  
-        } 
-
-        .lang-switch { 
-            position: fixed; 
-            top: 25px; 
-            right: 25px; 
-            background: rgba(255,255,255,0.1); 
-            backdrop-filter: blur(10px); 
-            border: 1px solid var(--accent); 
-            color: var(--accent); 
-            padding: 10px 20px; 
-            cursor: pointer; 
-            border-radius: 50px; 
-            font-weight: bold; 
-            z-index: 100; 
-            font-size: 0.8rem; 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adam Kanaan | AI Creative Director</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700;900&family=Noto+Sans+Arabic:wght@400;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --accent: #00f2ff;
+            --bg: #050505;
+        }
+        body {
+            background-color: var(--bg);
+            color: white;
+            font-family: 'Inter', 'Noto Sans Arabic', sans-serif;
+            margin: 0;
+            overflow-x: hidden;
+            line-height: 1.5;
+        }
+        .bg-glow {
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: radial-gradient(circle at 50% 50%, #1a1a1a 0%, #050505 100%);
+            z-index: -1;
+        }
+        .container { 
+            max-width: 1100px; 
+            margin: 0 auto; 
+            padding: 60px 20px; 
         }
 
-        header { margin-bottom: 60px; max-width: 750px; }
+        .lang-switch {
+            position: fixed;
+            top: 25px;
+            right: 25px;
+            background: rgba(255,255,255,0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid var(--accent);
+            color: var(--accent);
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 50px;
+            font-weight: bold;
+            z-index: 100;
+            font-size: 0.8rem;
+        }
+
+        header { margin-bottom: 60px; max-width: 850px; }
         h1 { font-size: clamp(3.5rem, 10vw, 5.5rem); margin: 0; text-transform: uppercase; line-height: 0.85; letter-spacing: -3px; font-weight: 900; }
         .gradient-text {
             background: linear-gradient(to right, #fff, var(--accent));
@@ -54,20 +54,49 @@
             -webkit-text-fill-color: transparent;
         }
         
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 40px; }
-        .section-title { color: var(--accent); text-transform: uppercase; letter-spacing: 3px; font-size: 0.9rem; margin-bottom: 20px; display: block; font-weight: 800; }
+        .grid { display: grid; grid-template-columns: 1.6fr 1fr; gap: 40px; }
+        @media (max-width: 850px) { .grid { grid-template-columns: 1fr; } }
+
+        .section-title { color: var(--accent); text-transform: uppercase; letter-spacing: 3px; font-size: 0.8rem; margin-bottom: 20px; display: block; font-weight: 800; border-left: 3px solid var(--accent); padding-left: 10px; }
+        .rtl .section-title { border-left: none; border-right: 3px solid var(--accent); padding-left: 0; padding-right: 10px; }
         
         .card {
             background: rgba(255,255,255,0.03);
             border: 1px solid rgba(255,255,255,0.1);
-            padding: 30px;
-            border-radius: 20px;
+            padding: 25px;
+            border-radius: 15px;
             transition: 0.4s;
             margin-bottom: 20px;
         }
         .card:hover { border-color: var(--accent); transform: translateY(-5px); background: rgba(0, 242, 255, 0.05); }
-        .card strong { font-size: 1.2rem; margin-bottom: 12px; display: block; }
-        .card p { font-size: 1rem; color: #ccc; margin: 0; font-weight: 300; }
+        .card strong { font-size: 1.1rem; margin-bottom: 8px; display: block; color: var(--accent); }
+        .card p { font-size: 0.95rem; color: #ccc; margin: 0; font-weight: 300; }
+        .card ul { padding-left: 18px; color: #aaa; margin-top: 10px; font-size: 0.9rem; }
+        .rtl .card ul { padding-left: 0; padding-right: 18px; }
+
+        .skills-grid { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 30px; }
+        .skill-pill { 
+            background: rgba(255,255,255,0.05); 
+            border: 1px solid rgba(255,255,255,0.1); 
+            padding: 8px 15px; 
+            border-radius: 50px; 
+            font-size: 0.85rem; 
+            color: #eee;
+            transition: 0.3s;
+        }
+        .skill-pill:hover { border-color: var(--accent); color: var(--accent); box-shadow: 0 0 10px rgba(0, 242, 255, 0.2); }
+
+        .item-head { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 5px; }
+        .date { font-size: 0.8rem; color: var(--accent); opacity: 0.8; font-weight: 700; }
+
+        .tech-box {
+            background: rgba(0, 242, 255, 0.05);
+            padding: 20px;
+            border-radius: 12px;
+            border: 1px solid rgba(0, 242, 255, 0.2);
+            font-size: 0.85rem;
+            color: #ddd;
+        }
 
         .btn {
             display: inline-block;
@@ -85,10 +114,6 @@
         }
         .btn:hover { box-shadow: 0 0 20px var(--accent); }
 
-        .social-links { margin-top: 15px; display: flex; gap: 20px; }
-        .social-links a { color: var(--accent); text-decoration: none; font-weight: bold; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px; }
-
-        /* CONTACT PAGE VIEW */
         #contact-page {
             position: fixed;
             top: 0; left: 0; width: 100%; height: 100%;
@@ -118,11 +143,11 @@
 
     <div id="contact-page">
         <div class="email-box">
-            <span class="section-title">Get In Touch</span>
+            <span class="section-title" style="border:none;">Get In Touch</span>
             <div class="email-text">aaikuw8@gmail.com</div>
-            <div class="social-links" style="justify-content: center; margin-bottom: 20px;">
-                <a href="https://www.instagram.com/ai.kuw8/" target="_blank">Instagram</a>
-                <a href="https://www.tiktok.com/@ai.kuw8" target="_blank">TikTok</a>
+            <div class="social-links" style="display:flex; gap:20px; justify-content: center; margin-bottom: 20px;">
+                <a href="https://www.instagram.com/ai.kuw8/" target="_blank" style="color:var(--accent); text-decoration:none; font-weight:bold; font-size:0.8rem; text-transform:uppercase;">Instagram</a>
+                <a href="https://www.tiktok.com/@ai.kuw8" target="_blank" style="color:var(--accent); text-decoration:none; font-weight:bold; font-size:0.8rem; text-transform:uppercase;">TikTok</a>
             </div>
             <button onclick="closeContact()" style="background:none; border:none; color:white; cursor:pointer; text-decoration:underline;">Back to Portfolio</button>
         </div>
@@ -131,40 +156,89 @@
     <div id="main-ui">
         <div id="en-content" class="container">
             <header>
-                <span class="section-title">Independent Freelance Agent | AI Creative Director & Producer</span>
+                <span class="section-title">AI Creative Director & Producer | High-End Cinematic Marketing</span>
                 <h1 class="gradient-text">ADAM<br>KANAAN</h1>
                 <p style="color: #888; margin-bottom: 5px;">Kuwait | aaikuw8@gmail.com</p>
-                <div class="social-links">
-                    <a href="https://www.instagram.com/ai.kuw8/" target="_blank">Instagram</a>
-                    <a href="https://www.tiktok.com/@ai.kuw8" target="_blank">TikTok</a>
-                </div>
                 <button onclick="openContact()" class="btn">CONTACT ME</button>
             </header>
 
             <div class="grid">
-                <div>
+                <div class="left">
                     <span class="section-title">The Methodology</span>
-                    <p style="font-weight: 400; color: #eee; margin-bottom: 25px; font-size: 1.1rem;">
-                        I don't just generate images; I engineer <strong>Marketing ROI</strong>. By blending high-end cinematography with bleeding-edge AI, I create visuals that command attention and convert.
+                    <p style="font-weight: 400; color: #eee; margin-bottom: 30px; font-size: 1.1rem;">
+                        I don't just generate images; I engineer <strong>Marketing ROI</strong>. By blending high-end cinematography with bleeding-edge AI, I create visuals that command attention and convert. I bridge the gap between generative tools and $100k commercial aesthetics, ensuring every frame meets the demands of modern, high-stakes media.
                     </p>
+
+                    <span class="section-title">Work Experience</span>
                     <div class="card">
-                        <strong>Cinematic Directorship</strong>
-                        <p>Precise command over virtual lensing, volumetric lighting, and physical consistency. I bridge the gap between generative tools and $100k commercial aesthetics, advancing the technical standards for the future of advertisement by ensuring every frame meets the demands of modern, high-stakes media.</p>
+                        <div class="item-head">
+                            <strong>AI Creative Director & Producer</strong>
+                            <span class="date">2022 – PRESENT</span>
+                        </div>
+                        <p style="font-style: italic; font-size: 0.85rem; margin-bottom: 10px;">Independent Freelance Agent</p>
+                        <ul>
+                            <li>Managing end-to-end video production for high-stakes digital branding and digital-first media.</li>
+                            <li>Executing scripts from initial paper sketches to final 4K render, ensuring brand-safe consistency.</li>
+                        </ul>
+                    </div>
+
+                    <div class="card">
+                        <div class="item-head">
+                            <strong>Founder & Creative Lead</strong>
+                            <span class="date">2022 – 2024</span>
+                        </div>
+                        <p style="font-style: italic; font-size: 0.85rem; margin-bottom: 10px;">AKCLOTHING47</p>
+                        <ul>
+                            <li>Launched and managed a clothing brand, creating all apparel designs and marketing assets from scratch.</li>
+                            <li>Developed a "Client-First" mindset, translating product identity into visual sales drivers.</li>
+                        </ul>
+                    </div>
+
+                    <div class="card">
+                        <div class="item-head">
+                            <strong>Graphic Designer</strong>
+                            <span class="date">2020 – 2022</span>
+                        </div>
+                        <p style="font-style: italic; font-size: 0.85rem; margin-bottom: 10px;">Freelance</p>
+                        <ul>
+                            <li>Specialized in visual composition and digital design, establishing the foundation for high-end aesthetic standards.</li>
+                        </ul>
                     </div>
                 </div>
-                <div>
-                    <span class="section-title">Projects</span>
+
+                <div class="right">
+                    <span class="section-title">Skills & Expertise</span>
+                    <div class="skills-grid">
+                        <div class="skill-pill">AI Video Generation</div>
+                        <div class="skill-pill">Unique Camera Dynamics</div>
+                        <div class="skill-pill">Conceptual Storyboarding</div>
+                        <div class="skill-pill">DaVinci Resolve</div>
+                        <div class="skill-pill">Strategic Visual Prompting</div>
+                        <div class="skill-pill">AI-Synthesized SFX</div>
+                        <div class="skill-pill">Brand Strategy</div>
+                        <div class="skill-pill">Temporal Stability</div>
+                        <div class="skill-pill">4K Pipeline Mastering</div>
+                    </div>
+
+                    <span class="section-title">Selected Projects</span>
                     <div class="card">
                         <strong>ASM Soccer Advertisement</strong>
-                        <p>High-octane athletic synthesis. I engineered photorealistic player motion and cinematic crowd dynamics, proving that AI can handle high-speed sports action with zero frame-dropping or quality loss.</p>
+                        <p>High-octane athletic synthesis with zero frame-dropping.</p>
                     </div>
                     <div class="card">
                         <strong>Product Commercials</strong>
-                        <p>Redefining luxury storytelling. These productions feature hyper-realistic human models and complex product interactions, delivering an emotional connection that standard CGI simply cannot touch.</p>
+                        <p>Hyper-realistic luxury storytelling for next-gen marketing.</p>
                     </div>
                     <div class="card">
                         <strong>Future-Proof Media</strong>
-                        <p>Deep-dive research into generative physics and temporal stability. My videos are optimized for the next generation of social marketing and digital-first branding.</p>
+                        <p>Deep-dive research into generative physics and temporal stability.</p>
+                    </div>
+
+                    <span class="section-title">Technical Standards</span>
+                    <div class="tech-box">
+                        <strong>VISUALS:</strong> 4K Ultra-HD, Temporal Stability<br>
+                        <strong>AUDIO:</strong> AI Audio Synthesis, Full SFX<br>
+                        <strong>OUTPUT:</strong> High-Stakes Commercial Assets
                     </div>
                 </div>
             </div>
@@ -172,40 +246,89 @@
 
         <div id="ar-content" class="container rtl hidden">
             <header>
-                <span class="section-title">وكيل فريلانسر مستقل | مخرج إبداعي ومنتج ذكاء اصطناعي</span>
+                <span class="section-title">مخرج إبداعي ومنتج ذكاء اصطناعي | تسويق سينمائي راقٍ</span>
                 <h1 class="gradient-text">آدم<br>كنعان</h1>
                 <p style="color: #888; margin-bottom: 5px;">الكويت | aaikuw8@gmail.com</p>
-                <div class="social-links">
-                    <a href="https://www.instagram.com/ai.kuw8/" target="_blank">إنستغرام</a>
-                    <a href="https://www.tiktok.com/@ai.kuw8" target="_blank">تيك توك</a>
-                </div>
                 <button onclick="openContact()" class="btn">تواصل معي</button>
             </header>
 
             <div class="grid">
-                <div>
+                <div class="left">
                     <span class="section-title">منهجية العمل</span>
-                    <p style="font-weight: 400; color: #eee; margin-bottom: 25px; font-size: 1.1rem;">
-                        أنا لا أصنع مجرد صور؛ أنا أقوم بهندسة <strong>العائد على الاستثمار</strong>. من خلال دمج الإخراج السينمائي الراقي مع أحدث تقنيات الذكاء الاصطناعي، أصنع محتوى يفرض نفسه ويحقق النتائج.
+                    <p style="font-weight: 400; color: #eee; margin-bottom: 30px; font-size: 1.1rem;">
+                       لا أكتفي بإنشاء الصور فحسب، بل أصمم عائدًا استثماريًا تسويقيًا مجزيًا. فمن خلال دمج تقنيات التصوير السينمائي الاحترافية مع أحدث تقنيات الذكاء الاصطناعي، أبتكر صورًا تجذب الانتباه وتحقق النتائج المرجوة. أربط بين أدوات التصميم الإبداعي والجماليات التجارية ذات الميزانيات الضخمة، وأضمن أن كل لقطة تلبي متطلبات الإعلام الحديث عالي المخاطر.
                     </p>
+
+                    <span class="section-title">الخبرة العملية</span>
                     <div class="card">
-                        <strong>الإخراج السينمائي الرقمي</strong>
-                        <p>إتقان تام للعدسات الافتراضية، الإضاءة الحجمية، والفيزياء المتناسقة. أعمل على سد الفجوة بين أدوات الذكاء الاصطناعي ومعايير الإعلانات التجارية الكبرى، مع تطوير الرؤية الفنية لمستقبل صناعة الإعلانات لضمان جودة بصرية تليق بالجيل القادم من المحتوى الإعلامي.</p>
+                        <div class="item-head">
+                            <strong>مخرج إبداعي ومنتج ذكاء اصطناعي</strong>
+                            <span class="date">2022 – الحاضر</span>
+                        </div>
+                        <p style="font-style: italic; font-size: 0.85rem; margin-bottom: 10px;">وكيل فريلانسر مستقل</p>
+                        <ul>
+                            <li>إدارة إنتاج الفيديو المتكامل للعلامات التجارية الرقمية والوسائط الحديثة.</li>
+                            <li>تنفيذ السيناريوهات من المسودات الورقية إلى رندر 4K مع ضمان اتساق هوية العلامة التجارية.</li>
+                        </ul>
+                    </div>
+
+                    <div class="card">
+                        <div class="item-head">
+                            <strong>مؤسس ومدير إبداعي</strong>
+                            <span class="date">2022 – 2024</span>
+                        </div>
+                        <p style="font-style: italic; font-size: 0.85rem; margin-bottom: 10px;">AKCLOTHING47</p>
+                        <ul>
+                            <li>إطلاق وإدارة علامة تجارية للملابس، وتصميم جميع المنتجات والأصول التسويقية من الصفر.</li>
+                            <li>تطوير عقلية "العميل أولاً"، وتحويل هوية المنتج إلى محفزات بصرية للمبيعات.</li>
+                        </ul>
+                    </div>
+
+                    <div class="card">
+                        <div class="item-head">
+                            <strong>مصمم جرافيك</strong>
+                            <span class="date">2020 – 2022</span>
+                        </div>
+                        <p style="font-style: italic; font-size: 0.85rem; margin-bottom: 10px;">عمل حر</p>
+                        <ul>
+                            <li>التخصص في التكوين البصري والتصميم الرقمي، وتأسيس معايير جمالية راقية.</li>
+                        </ul>
                     </div>
                 </div>
-                <div>
+
+                <div class="right">
+                    <span class="section-title">المهارات والخبرات</span>
+                    <div class="skills-grid">
+                        <div class="skill-pill">توليد فيديو بالذكاء الاصطناعي</div>
+                        <div class="skill-pill">ديناميكيات كاميرا فريدة</div>
+                        <div class="skill-pill">ستوري بورد مفاهيمي</div>
+                        <div class="skill-pill">DaVinci Resolve</div>
+                        <div class="skill-pill">توجيه بصري استراتيجي</div>
+                        <div class="skill-pill">مؤثرات صوتية مركبة</div>
+                        <div class="skill-pill">استراتيجية العلامة التجارية</div>
+                        <div class="skill-pill">الاستقرار الزمني</div>
+                        <div class="skill-pill">إتقان خط إنتاج 4K</div>
+                    </div>
+
                     <span class="section-title">المشاريع المختارة</span>
                     <div class="card">
-                        <strong>حملة ASM الرياضية</strong>
-                        <p>توليد حركي عالي الأداء. قمت بهندسة حركة رياضية واقعية وبيئات سينمائية صاخبة، مما يثبت أن الذكاء الاصطناعي قادر على محاكاة الأكشن الرياضي بدقة متناهية.</p>
+                        <strong>إعلان ASM الرياضي</strong>
+                        <p>توليد حركي رياضي واقعي دون أي فقدان في الجودة.</p>
                     </div>
                     <div class="card">
                         <strong>إعلانات المنتجات</strong>
-                        <p>إعادة تعريف سرد القصص الفاخرة. تتميز هذه الإنتاجات بظهور <strong>أشخاص واقعيين تماماً</strong> وتفاعلات معقدة مع المنتجات، لتقديم ارتباط عاطفي لا يمكن للجرافيك التقليدي الوصول إليه.</p>
+                        <p>سرد قصصي فاخر وعلاقة عاطفية لا يمكن للجرافيك التقليدي محاكاتها.</p>
                     </div>
                     <div class="card">
                         <strong>إعلام المستقبل</strong>
-                        <p>أبحاث عميقة في فيزياء التوليد والاستقرار الزمني. فيديوهاتي مصممة لتناسب الجيل القادم من التسويق الرقمي والعلامات التجارية العصرية.</p>
+                        <p>أبحاث عميقة في فيزياء التوليد والاستقرار الزمني للمحتوى المعقد.</p>
+                    </div>
+
+                    <span class="section-title">المعايير التقنية</span>
+                    <div class="tech-box">
+                        <strong>البصريات:</strong> دقة 4K، استقرار زمني<br>
+                        <strong>الصوت:</strong> تركيب صوتي بالذكاء الاصطناعي، SFX كامل<br>
+                        <strong>المخرجات:</strong> أصول تجارية رفيعة المستوى
                     </div>
                 </div>
             </div>
@@ -218,26 +341,21 @@
             const ar = document.getElementById('ar-content');
             const btn = document.querySelector('.lang-switch');
             if (en.classList.contains('hidden')) {
-                en.classList.remove('hidden');
-                ar.classList.add('hidden');
+                en.classList.remove('hidden'); ar.classList.add('hidden');
                 btn.innerText = "ARABIC / عربي";
             } else {
-                en.classList.add('hidden');
-                ar.classList.remove('hidden');
+                en.classList.add('hidden'); ar.classList.remove('hidden');
                 btn.innerText = "ENGLISH / إنجليزي";
             }
         }
-
         function openContact() {
             document.getElementById('contact-page').style.display = 'flex';
             document.getElementById('main-ui').style.display = 'none';
         }
-
         function closeContact() {
             document.getElementById('contact-page').style.display = 'none';
             document.getElementById('main-ui').style.display = 'block';
         }
     </script>
 </body>
-</html> 
-
+</html>
